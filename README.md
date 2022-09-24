@@ -78,10 +78,10 @@
 [![hardware block](images/hardware-block.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/hardware-block.JPG)
 
 ### Actual hardware connection
-[![system photo](images/photo/system-photo.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/system-photo.JPG)
+[![system photo](images/photo/system-photo.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/system-photo.jpg)
 
 ### main board
-[![main board](images/photo/main-board.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/main-board.JPG)
+[![main board](images/photo/main-board.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/main-board.jpg)
 
 
 # Video TODO
