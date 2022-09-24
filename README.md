@@ -43,7 +43,7 @@
    [![Solar panel](/images/photo/hardware/solar-panel-2.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/tree/main/images/photo/hardware/solar-panel-2.jpg)
 
 2. [Joway 6000mAh power bank](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/power-bank-1.jpg) (or a power bank who supports charging and discharging simultaneously)
-   [![Joway 6000mAh power bank](/images/photo/hardware/power-bank-1.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/power-bank-1.JPG)
+   [![Joway 6000mAh power bank](/images/photo/hardware/power-bank-1.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/676d8f9e7c9cd0896002efb911382a55a982b09f/images/photo/hardware/power-bank-1.JPG)
 
 3. Yage YG-5617 mosquito-killing swatter 
    [![Yage YG-5617 mosquito-killing swatter](/images/photo/hardware/mosquito-swatter-1.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/tree/main/images/photo/hardware/mosquito-swatter-1.jpg)
