@@ -70,13 +70,27 @@
 ## Installation TODO
 
 ---
+## Demo 
+### System block diagram
+[![system block](images/system-block.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/system-block.JPG)
 
-## Demo Video TODO
----
+### Hardware block diagram
+[![hardware block](images/hardware-block.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/hardware-block.JPG)
 
-## Screenshots 
+### Actual hardware connection
+[![system photo](images/photo/system-photo.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/system-photo.JPG)
 
+### main board
+[![main board](images/photo/main-board.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/main-board.JPG)
+
+
+# Video TODO
+
+
+### Screenshot on PC terminal (with serial terminal connected to Pico's UART0)
 [![screenshot-arduino](/images/screenshot/log-screen.png)](https://github.com/teamprof/arduino-pico-solar-iot/tree/master/images/screenshot/log-screen.png)
+
+---
 
 
 ---
