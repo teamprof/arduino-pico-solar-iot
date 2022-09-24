@@ -1,3 +1,7 @@
+./Credential.cpp
+./.vscode/
+./build/
+
 # Prerequisites
 *.d
 
