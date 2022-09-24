@@ -46,7 +46,6 @@
    [![Joway 6000mAh power bank](images/photo/hardware/power-bank-1.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/power-bank-1.JPG)
 
 3. Yage YG-5617 mosquito-killing swatter 
-
    [![Yage YG-5617 mosquito-killing swatter](images/photo/hardware/mosquito-swatter-1.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/mosquito-swatter-1.JPG)
 
 4. [WizFi360-EVB-Pico](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico)
