@@ -40,21 +40,21 @@
 ## Prerequisites
 ### Hardware
 1. AllPowers Foldable Solar Panel Charger 5V10W with Built in USB (https://www.aliexpress.com/item/32859296874.html)
-   [![Solar panel](/images/photo/hardware/solar-panel-2.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/solar-panel-2.jpg)
+   [![Solar panel](/images/photo/hardware/solar-panel-2.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/tree/main/images/photo/hardware/solar-panel-2.jpg)
 
 2. [Joway 6000mAh power bank](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/power-bank-1.jpg) (or a power bank who supports charging and discharging simultaneously)
-   [![Joway 6000mAh power bank](/images/photo/hardware/power-bank-1.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/power-bank-1.jpg)
+   [![Joway 6000mAh power bank](/images/photo/hardware/power-bank-1.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/tree/main/images/photo/hardware/power-bank-1.jpg)
 
 3. Yage YG-5617 mosquito-killing swatter 
-   [![Yage YG-5617 mosquito-killing swatter](/images/photo/hardware/mosquito-swatter-1.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/hardware/mosquito-swatter-1.jpg)
+   [![Yage YG-5617 mosquito-killing swatter](/images/photo/hardware/mosquito-swatter-1.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/tree/main/images/photo/hardware/mosquito-swatter-1.jpg)
 
 4. [WizFi360-EVB-Pico](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico)
 
 5. [Battery level detection board](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.68e42e8d6qSWMp&id=624781563779&_u=l3no53d8eac4)
-   [![Battery detection IC](/images/schematic/battery-detection.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/schematic/battery-detection.jpg)
+   [![Battery detection IC](/images/schematic/battery-detection.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/tree/main/images/schematic/battery-detection.jpg)
 
 6. Load switch board
-   [![Load Switch](/images/schematic/load-switch.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/schematic/load-switch.jpg)
+   [![Load Switch](/images/schematic/load-switch.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/tree/main/images/schematic/load-switch.jpg)
 
 ### Software
 1. [`Azure IoT Hub](https://azure.microsoft.com/en-gb/services/iot-hub/)
