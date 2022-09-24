@@ -23,7 +23,7 @@
 namespace credential
 {
     ///////////////////////////////////////////////////////////////////////////
-    // modify the followings for your system
+    // modify the following values for your system
     ///////////////////////////////////////////////////////////////////////////
     const char NetworkSsid[] = "<SSID>";
     const char NetworkPassword[] = "<password>";
