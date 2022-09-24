@@ -18,13 +18,13 @@
 ## Why do we need this [Solar powered mosquito-killing IoT product](https://github.com/teamprof/arduino-solar-iot)
 
 ### 1. Mosquitoes aren't just annoying, they spread killer diseases, as well. They are often called one of the most dangerous animals on the planet (https://www.businessinsider.com/11-reasons-mosquitoes-are-the-worst-2014-4). 
-### 2. Mosquitoe-killing swatter is one of weapons to kill Mosquitoes, however, it is battery powered which is difficult to provide 24x7 operation.
+### 2. Mosquito-killing swatter is one of weapons to kill Mosquitoes, however, it is battery powered which is difficult to provide 24x7 operation.
 ### 3. AC powered modquito-killing product has its limitation of installing on area without electricity, e.g. rural area.
 ### 4. A solar powered mosquito-killing IoT product is introduced to provide 24x7 operation without electricity power line.
 
 ---
 ## Features
-#### 1. A solar panel provides energy on charing power bank. Solar energy is a clean energy which is a trend of providing human a better environment in future
+#### 1. A solar panel provides energy on charging power bank. Solar energy is a clean energy which is a trend of providing human a better environment in future
 #### 2. Power bank provides power to [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) and Mosquitoe-killing swatter;
 #### 3. [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) turns swatter on and off regularly. This reduces power consumption such that it supports 24x7 operation;
 #### 4. [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) reports battery status to cloud every hour, this minimize supervision resource on site;
@@ -92,11 +92,6 @@ https://youtube.com/shorts/I1OqjLPGQjs?feature=share
 
 ---
 
-## Installation TODO
-
----
-## Code Examples TODO
-```
 
 ```
 ---
