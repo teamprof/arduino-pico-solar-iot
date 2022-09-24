@@ -54,7 +54,7 @@
 5. [Battery level detection board](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.68e42e8d6qSWMp&id=624781563779&_u=l3no53d8eac4)
    [![Battery detection IC](images/schematic/battery-detection.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/schematic/battery-detection.JPG)
 
-6. Load switch board
+6. Load switch board (please refer to MT9700 datasheet)
    [![Load Switch](images/schematic/load-switch.JPG)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/schematic/load-switch.JPG)
 
 ### Software
@@ -64,10 +64,6 @@
 4. ['Arduino DebugLog lib'](https://www.arduino.cc/reference/en/libraries/debuglog/)
 5. [`WizFi360 library for Arduino'](https://www.arduino.cc/reference/en/libraries/wizfi360/)
 
-
----
-
-## Installation TODO
 
 ---
 ## Demo 
@@ -84,14 +80,19 @@
 [![main board](images/photo/main-board.jpg)](https://github.com/teamprof/arduino-pico-solar-iot/blob/main/images/photo/main-board.jpg)
 
 
-# Video TODO
-
+# Video 
+[![video demo](images/video-demo.JPG)](https://youtube.com/shorts/I1OqjLPGQjs?feature=share)
+https://youtube.com/shorts/I1OqjLPGQjs?feature=share
 
 ### Screenshot on PC terminal (with serial terminal connected to Pico's UART0)
 [![screenshot-arduino](/images/screenshot/log-screen.png)](https://github.com/teamprof/arduino-pico-solar-iot/tree/master/images/screenshot/log-screen.png)
 
 ---
 
+
+---
+
+## Installation TODO
 
 ---
 ## Code Examples TODO
@@ -118,6 +119,9 @@ Submit issues to: [Solar powered IoT issues](https://github.com/teamprof/arduino
 ## TO DO
 
 1. Search for bug and improvement.
+2. Extend to other green energy likes wind/water power generator.
+3. Extend to different applications such as mosquitto index measurement or agriculture IoT system. 
+4. A.I. algorithm to measure number of mosquitto killed.
 
 ---
 
