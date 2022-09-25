@@ -18,16 +18,16 @@
 ## Why do we need this [Solar powered mosquito-killing IoT product](https://github.com/teamprof/arduino-solar-iot)
 
 ### 1. Mosquitoes aren't just annoying, they spread killer diseases, as well. They are often called one of the most dangerous animals on the planet (https://www.businessinsider.com/11-reasons-mosquitoes-are-the-worst-2014-4). 
-### 2. Mosquito-killing swatter is one of weapons to kill Mosquitoes, however, it is battery powered which is difficult to provide 24x7 operation.
+### 2. Mosquito-killing swatter is one of weapons to kill Mosquitoes, however, it is battery powered which is difficult to provide 24x7 operations.
 ### 3. AC powered modquito-killing product has its limitation of installing on area without electricity, e.g. rural area.
-### 4. A solar powered mosquito-killing IoT product is introduced to provide 24x7 operation without electricity power line.
+### 4. A solar powered mosquito-killing IoT product is introduced to provide 24x7 operations without electricity power line.
 
 ---
 ## Features
-#### 1. A solar panel provides energy on charging power bank. Solar energy is a clean energy which is a trend of providing human a better environment in future
+#### 1. A solar panel provides energy on charging power bank. Solar energy is a clean energy which is a trend of providing human a better environment in future;
 #### 2. Power bank provides power to [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) and Mosquitoe-killing swatter;
-#### 3. [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) turns swatter on and off regularly. This reduces power consumption such that it supports 24x7 operation;
-#### 4. [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) reports battery status to cloud every hour, this minimize supervision resource on site;
+#### 3. [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) turns swatter on and off regularly. This reduces power consumption such that it supports 24x7 operations;
+#### 4. [**WizFi360-EVB-Pico**](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico) reports battery status to cloud every hour, this minimize resource of human supervision on site;
 
 ---
 
@@ -94,16 +94,16 @@ https://youtube.com/shorts/I1OqjLPGQjs?feature=share
 ---
 
 ## Installation 
-#### 1. Soldering a wire between RP2040's GPIO27 and WizFi360's pin4 (MUST).
+#### 1. Soldering a wire between RP2040's GPIO27 and WizFi360's pin4. (MUST)
 #### 2. Connect all components shown in the "Actual hardware connection" section above (optional) (note: NO instruction on hardware is provided due to the potential risk of this high voltage application)
 #### 3. Download arduino-pico-solar-iot-main.zip from github and extract to Arduino's user project folder.
-#### 4. Install all Arduino lib shown in the "Prerequisites" - "Software" section above.
+#### 4. Install all Arduino lib shown in the "Prerequisites" - "Software" section above. (MUST)
 #### 5. Create/Setup an Azure IoT Hub on cloud (MUST)
-#### 6. Modify variables in "Credential.cpp" for your IoT Hub information.
+#### 6. Modify variables in "Credential.cpp" for your IoT Hub information. (MUST)
 #### 7. Connect RP2040's UART0 (GPIO0, GPIO1) to PC's serial port, launch a serial terminal (NOT Arduino's Serial Monitor).
 #### 8. Connect WizFi360 EVB Pico to PC with an USB cable, select the EVB's port. Compile and run in Arduino IDE.
 #### If everything goes smooth, log data should be shown on the serial terminal. Azure IoT Hub should receive WizFi360 data within couple minutes.
-#### If Azure IoT Hub does not recevie WizFi360 data, modify "BATTERY_REPORT_INTERVAL" value to 60 from 3600 in "github-pico-solar-iot.ino" line 30. Re-compile and upload again, Azure IoT Hub should receive WizFi360 data within couple minutes.
+#### If Azure IoT Hub does not recevie WizFi360 data, modify "BATTERY_REPORT_INTERVAL" value to 60 from 3600 on "github-pico-solar-iot.ino" line 30. Re-compile and upload again, Azure IoT Hub should receive WizFi360 data within couple minutes.
 
 
 
