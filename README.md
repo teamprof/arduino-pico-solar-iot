@@ -63,6 +63,7 @@
 3. [`Arduino mbed_rp2040 core 2.7.2-`](https://github.com/arduino/ArduinoCore-mbed) 
 4. ['Arduino DebugLog lib'](https://www.arduino.cc/reference/en/libraries/debuglog/)
 5. [`WizFi360 library for Arduino'](https://www.arduino.cc/reference/en/libraries/wizfi360/)
+6. [`ArduinoJson library'](https://arduinojson.org/)
 
 
 ---
@@ -92,8 +93,135 @@ https://youtube.com/shorts/I1OqjLPGQjs?feature=share
 
 ---
 
+## Installation 
+#### 1. Soldering a wire between RP2040's GPIO27 and WizFi360's pin4 (MUST).
+#### 2. Connect all components shown in the "Actual hardware connection" section above (optional) (note: NO instruction on hardware is provided due to the potential risk of this high voltage application)
+#### 3. Download arduino-pico-solar-iot-main.zip from github and extract to Arduino's user project folder.
+#### 4. Install all Arduino lib shown in the "Prerequisites" - "Software" section above.
+#### 5. Create/Setup an Azure IoT Hub on cloud (MUST)
+#### 6. Modify variables in "Credential.cpp" for your IoT Hub information.
+#### 7. Connect RP2040's UART0 (GPIO0, GPIO1) to PC's serial port, launch a serial terminal (NOT Arduino's Serial Monitor).
+#### 8. Connect WizFi360 EVB Pico to PC with an USB cable, select the EVB's port. Compile and run in Arduino IDE.
+#### If everything goes smooth, log data should be shown on the serial terminal. Azure IoT Hub should receive WizFi360 data within couple minutes.
+#### If Azure IoT Hub does not recevie WizFi360 data, modify "BATTERY_REPORT_INTERVAL" value to 60 from 3600 in "github-pico-solar-iot.ino" line 30. Re-compile and upload again, Azure IoT Hub should receive WizFi360 data within couple minutes.
 
+
+
+# (source code will be available by end of Oct)
+
+---
+## Code Examples
+### Since functions in WizFi360 lib are blocking operations, a separate thread is created in "setup()". This makes Arduino's loop() and WizFi360 runs in parallel. 
 ```
+#define THREAD_WIZFI360_QUEUE_SIZE (256 * EVENTS_EVENT_SIZE) // message queue size for WizFi360 task
+static ThreadWizFi360 threadWizFi360(THREAD_WIZFI360_QUEUE_SIZE);
+void setup(void)
+{
+   ...
+
+    threadWizFi360.start();
+    threadWizFi360.postEvent(EventBatteryStatusUpdate, batteryLevel); // report battery status after bootup
+}
+```
+### The traditional Arduino's loop() turns on/off swatter and monitoring battery status. The battery monitor code posts event to WizFi360 thread, if there is battery status change or every 60 minutes pass.
+```
+#define BATTERY_REPORT_INTERVAL 3600 // report battery level every 60 minutes
+// #define BATTERY_REPORT_INTERVAL 60 // report battery level every 60 seconds (for testing only)
+
+#define SWATTER_ON_TIME 10  // on for 10 seconds
+#define SWATTER_OFF_TIME 40 // off for 40 seconds
+
+void loop(void)
+{
+    // turn on swatter for 10s, then off for 40s
+    static unsigned int swatterCounter = 0;
+    if (swatterCounter++ == 0)
+    {
+        SwatterOn();
+        ledOn();
+    }
+    else if (swatterCounter == SWATTER_ON_TIME)
+    {
+        SwatterOff();
+        ledOff();
+    }
+    else if (swatterCounter >= (SWATTER_ON_TIME + SWATTER_OFF_TIME))
+    {
+        swatterCounter = 0;
+    }
+
+    // signal ThreadWizFi360 to report battery level hourly
+    static unsigned int batteryCounter = 0;
+    uint16_t level = battery.read();
+    // LOG_DEBUG("level=", level);
+    if (batteryLevel != level)
+    {
+        batteryLevel = level;
+        threadWizFi360.postEvent(EventBatteryStatusUpdate, level);
+    }
+    else if (batteryCounter++ >= BATTERY_REPORT_INTERVAL)
+    {
+        threadWizFi360.postEvent(EventBatteryStatusUpdate, level);
+        batteryCounter = 0;
+    }
+
+    delay(1000);
+}
+```
+### When system bootup, WizFi360 thread initializes serial port, checks Wizfi360 hardware. If everything goes smooth, it starts SNTP process to synchronize RP2040's RTC to network time.
+```
+void ThreadWizFi360::setup(void)
+{
+    LOG_DEBUG("on core", get_core_num());
+
+    uartWifi.begin(115200);
+    uartWifi.onRxEvent([this]()
+                       { postEvent(EventUartRx); });
+
+    wizFi360DrvExtra.hardwareReset();
+    WiFi.init(&uartWifi);
+    if (wizFi360DrvExtra.wakeup())
+    {
+        setWizfiState(Wakeup);
+    }
+    else
+    {
+        setWizfiState(FatalError);
+        LOG_ERROR("Fatal error: wizFi360DrvExtra.wakeup() returns false");
+        return;
+    }
+
+    // if (!wizFi360DrvExtra.setSleepMode(WizFi360DrvExtra::LightSleepMode))
+    // {
+    //     LOG_ERROR("wizFi360DrvExtra.setSleepMode(LightSleepMode) failed");
+    // }
+
+    int sleepMode = -1;
+    if (wizFi360DrvExtra.getSleepMode(&sleepMode))
+    {
+        LOG_DEBUG("wizFi360DrvExtra.getSleepMode()=", sleepMode);
+    }
+    else
+    {
+        LOG_ERROR("Fatal error: wizFi360DrvExtra.getSleepMode() returns false");
+        return;
+    }
+
+    // check for the presence of the shield
+    if (WiFi.status() == WL_NO_SHIELD)
+    {
+        LOG_ERROR("WiFi shield not present");
+        wizfiState = FatalError;
+        return;
+    }
+
+    initRTC();
+    postEvent(EventWizfiSyncSNTP);
+}
+```
+### WizFi360 goes into standby mode during idle, in order to save power consumption. If there is message to be sent to Azure, WizFi360 wakeup, connects WiFi AP, configures Azure settings, connects Azure and post MQTT message to Azure IoT Hub.
+(note: an external wire connecting RP2040's GPIO27 and WizFi360's pin4 is required, in order to wakeup WizFi360 from standby mode)
+### Detail code of WizFi360 thread is on ThreadWizfi360.cpp/.h
 ---
 
 
