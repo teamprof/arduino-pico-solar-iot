@@ -106,9 +106,6 @@ https://youtube.com/shorts/I1OqjLPGQjs?feature=share
 #### If Azure IoT Hub does not recevie WizFi360 data, modify "BATTERY_REPORT_INTERVAL" value to 60 from 3600 on "github-pico-solar-iot.ino" line 30. Re-compile and upload again, Azure IoT Hub should receive WizFi360 data within couple minutes.
 
 
-
-# (source code will be available by end of Oct)
-
 ---
 ## Code Examples
 ### Since functions in WizFi360 lib are blocking operations, a separate thread is created in "setup()". This makes Arduino's loop() and WizFi360 runs in parallel. 
