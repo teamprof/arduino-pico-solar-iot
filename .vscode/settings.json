@@ -1,0 +1,32 @@
+{
+    "files.associations": {
+        "thread": "cpp",
+        "optional": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "mstd_memory": "cpp",
+        "mstd_new": "cpp",
+        "mstd_tuple": "cpp",
+        "mstd_type_traits": "cpp",
+        "*.tcc": "cpp",
+        "chrono": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "algorithm": "cpp",
+        "memory": "cpp",
+        "cmath": "cpp",
+        "fstream": "cpp",
+        "limits": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "string_view": "cpp",
+        "typeinfo": "cpp"
+    }
+}

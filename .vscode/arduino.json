@@ -1,0 +1,6 @@
+{
+    "output": "../build/arduino-pico-solar-iot",
+    "port": "/dev/ttyACM0",
+    "board": "arduino:mbed_rp2040:pico",
+    "sketch": "github-pico-solar-iot.ino"
+}
