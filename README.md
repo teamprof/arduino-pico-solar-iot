@@ -108,7 +108,7 @@ https://youtube.com/shorts/I1OqjLPGQjs?feature=share
 
 ---
 ## Code Examples
-### Since functions in WizFi360 lib are blocking operations, a separate thread is created in "setup()". This makes Arduino's loop() and WizFi360 runs in parallel. 
+#### Since functions in WizFi360 lib are blocking operations, a separate thread is created in "setup()". This makes Arduino's loop() and WizFi360 runs in parallel. 
 ```
 #define THREAD_WIZFI360_QUEUE_SIZE (256 * EVENTS_EVENT_SIZE) // message queue size for WizFi360 task
 static ThreadWizFi360 threadWizFi360(THREAD_WIZFI360_QUEUE_SIZE);
@@ -120,7 +120,7 @@ void setup(void)
     threadWizFi360.postEvent(EventBatteryStatusUpdate, batteryLevel); // report battery status after bootup
 }
 ```
-### The traditional Arduino's loop() turns on/off swatter and monitoring battery status. The battery monitor code posts event to WizFi360 thread, if there is battery status change or every 60 minutes pass.
+#### The traditional Arduino's loop() turns on/off swatter and monitoring battery status. The battery monitor code posts event to WizFi360 thread, if there is battery status change or every 60 minutes pass.
 ```
 #define BATTERY_REPORT_INTERVAL 3600 // report battery level every 60 minutes
 // #define BATTERY_REPORT_INTERVAL 60 // report battery level every 60 seconds (for testing only)
@@ -165,7 +165,7 @@ void loop(void)
     delay(1000);
 }
 ```
-### When system bootup, WizFi360 thread initializes serial port, checks Wizfi360 hardware. If everything goes smooth, it starts SNTP process to synchronize RP2040's RTC to network time.
+#### When system bootup, WizFi360 thread initializes serial port, checks Wizfi360 hardware. If everything goes smooth, it starts SNTP process to synchronize RP2040's RTC to network time.
 ```
 void ThreadWizFi360::setup(void)
 {
@@ -216,9 +216,9 @@ void ThreadWizFi360::setup(void)
     postEvent(EventWizfiSyncSNTP);
 }
 ```
-### WizFi360 goes into standby mode during idle, in order to save power consumption. If there is message to be sent to Azure, WizFi360 wakeup, connects WiFi AP, configures Azure settings, connects Azure and post MQTT message to Azure IoT Hub.
+#### WizFi360 goes into standby mode during idle, in order to save power consumption. If there is message to be sent to Azure, WizFi360 wakeup, connects WiFi AP, configures Azure settings, connects Azure and post MQTT message to Azure IoT Hub.
 (note: an external wire connecting RP2040's GPIO27 and WizFi360's pin4 is required, in order to wakeup WizFi360 from standby mode)
-### Detail code of WizFi360 thread is on ThreadWizfi360.cpp/.h
+#### Detail code of WizFi360 thread is on ThreadWizfi360.cpp/.h
 ---
 
 
@@ -249,6 +249,11 @@ Submit issues to: [Solar powered IoT issues](https://github.com/teamprof/arduino
 Basic demo of the followings:
 1. Turn mosquito-killing swatter on 10s, then turn it off for 40s
 2. Azure IoT Hub Connection, report battery status every hour 
+
+---
+## FAQ
+1. Fail to build?
+   >>> Since Arduino requires .ino filename to be same as project directory, please rename the project directory name to "github-pico-solar-iot" from "arduino-pico-solar-iot-main".
 
 ---
 
